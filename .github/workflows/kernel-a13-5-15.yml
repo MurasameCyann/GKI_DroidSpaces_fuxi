@@ -16,6 +16,7 @@ on:
           #- Next
           - SukiSU
           - ReSukiSU
+          - off
         default: ReSukiSU
       kernelsu_branch:
         description: "KSU 分支"
