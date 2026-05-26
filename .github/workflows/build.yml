@@ -354,6 +354,7 @@ jobs:
           echo "obj-y += hmbird_patch.o" >> Makefile
 
       - name: 确定 KernelSU 分支
+        if: inputs.ksu_variant != 'off'
         id: ksu-branch
         run: |
           branch_input="${{ inputs.ksu_branch }}"
@@ -408,6 +409,7 @@ jobs:
           echo "KSU 分支: $BRANCH"
 
       - name: 添加 KernelSU
+        if: inputs.ksu_variant != 'off'
         working-directory: ${{ env.KERNEL_ROOT }}
         run: |
           case "${{ inputs.ksu_variant }}" in
